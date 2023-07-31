@@ -1,0 +1,117 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: #d0d3d4;
+}
+h3 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 45px;
+  text-align: center;
+  padding-top: 40px;
+  color: #3498db;
+  text-decoration: underline #3498db;
+}
+.main-body {
+  margin-top: 60px;
+  align-items: center;
+  margin-left: 540px;
+}
+.main-body h5 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  color: #ec7063;
+}
+.name {
+  display: flex;
+}
+.address {
+  display: flex;
+}
+.country {
+  display: flex;
+}
+.state {
+  display: flex;
+}
+.district {
+  display: flex;
+}
+.gender {
+  display: flex;
+}
+.age {
+  display: flex;
+}
+.email {
+  display: flex;
+}
+.number {
+  display: flex;
+}
+.password {
+  display: flex;
+}
+.confirm {
+  display: flex;
+}
+input {
+  width: 100%;
+  height: 100%;
+}
+#uname {
+  margin-left: 125px;
+  width: 38%;
+  height: 30px;
+}
+#uaddress {
+  margin-left: 95px;
+  width: 38%;
+}
+#ucountry {
+  margin-left: 95px;
+  width: 38%;
+  height: 30px;
+}
+#ustate {
+  margin-left: 125px;
+  width: 38%;
+  height: 30px;
+}
+#udistrict {
+  margin-left: 105px;
+  width: 38%;
+  height: 30px;
+}
+#uage {
+  margin-left: 140px;
+  width: 38%;
+  height: 30px;
+}
+#uemail {
+  margin-left: 130px;
+  width: 38%;
+  height: 30px;
+}
+#unumber {
+  margin-left: 36px;
+  width: 38%;
+  height: 30px;
+}
+#upassword {
+  margin-left: 90px;
+  width: 38%;
+  height: 30px;
+}
+#uconfirm {
+  margin-left: 15px;
+  width: 38%;
+  height: 30px;
+}
+button {
+  padding: 6px 10px;
+  margin-left: 180px;
+  background-color: #7dcea0;
+  cursor: pointer;
+}

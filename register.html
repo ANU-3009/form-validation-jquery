@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Registration Form </title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+  </head>
+  <body>
+    <h3>Registration Form</h3>
+    <div class="main-body">
+      <div class="main-body2">
+        <form onsubmit="return validate()" action="message.html">
+          <div class="name">
+            <h5>NAME :</h5>
+            <input id="uname" type="text">
+          </div>
+          <br>
+          <br>
+          <div class="address">
+            <h5> ADDRESS : </h5>
+            <textarea id="uaddress" type="text"></textarea>
+          </div>
+          <br>
+          <br>
+          <div class="country">
+            <h5> COUNTRY : </h5>
+            <input id="ucountry" type="text">
+          </div>
+          <br>
+          <br>
+          <div class="state">
+            <h5> STATE : </h5>
+            <input id="ustate" type="text">
+          </div>
+          <br>
+          <br>
+          <div class="district">
+            <h5> DISTRICT : </h5>
+            <input id="udistrict" type="text">
+          </div>
+          <br>
+          <br>
+          <div class="age">
+            <h5> AGE : </h5>
+            <input id="uage" type="text">
+          </div>
+          <br>
+          <br>
+          <div class="email">
+            <h5> EMAIL : </h5>
+            <input id="uemail" type="text">
+          </div>
+          <br>
+          <br>
+          <div class="number">
+            <h5> CONTACT NUMBER : </h5>
+            <input id="unumber" type="text">
+          </div>
+          <br>
+          <br>
+          <div class="password">
+            <h5> PASSWORD : </h5>
+            <input id="upassword" type="text">
+          </div>
+          <br>
+          <br>
+          <div class="confirm">
+            <h5> CONFIRM PASSWORD : </h5>
+            <input id="uconfirm" type="text">
+          </div>
+          <br>
+          <br>
+          <button type="submit">Submit</button>
+        </form>
+        <script>
+          function validate() {
+            var uname = $("#uname").val().trim();
+            var uaddress = $("#uaddress").val().trim();
+            var ucountry = $("#ucountry").val().trim();
+            var ustate = $("#ustate").val().trim();
+            var udistrict = $("#udistrict").val().trim();
+            var uage = $("#uage").val().trim();
+            var uemail = $("#uemail").val().trim();
+            var unumber = $("#unumber").val().trim();
+            var upassword = $("#upassword").val().trim();
+            var uconfirm = $("#uconfirm").val().trim();
+            if (uname === "" || uaddress === "" || ucountry === "" || ustate === "" || udistrict === "" || uage === "" || uemail === "" || unumber === "" || upassword === "" || uconfirm === "") {
+              alert("Please fill in all the fields.");
+              return false;
+            }
+            var nameRegex = /^[a-zA-Z]+ [a-zA-Z]+$/;
+            if (!nameRegex.test(uname)) {
+              alert("Invalid name");
+              return false;
+            }
+            if (isNaN(uage) || uage < 1 || uage > 100) {
+              alert("The age must be a number between 1 and 100");
+              return false;
+            }
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(uemail)) {
+              alert("Invalid email. Please provide a valid email address.");
+              return false;
+            }
+            var numRegex = /^(\d{3})[- ]?(\d{3})[- ]?(\d{4})$/;
+            if (!numRegex.test(unumber)) {
+              alert("invalid number");
+              return false;
+            }
+            var passRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+            if (!passRegex.test(upassword)) {
+              alert("Password must contain at least one number, one uppercase letter, one lowercase letter, and be at least 8 characters long.");
+              return false;
+            }
+            if (upassword !== uconfirm) {
+              alert("Password and confirm password do not match.");
+              return false;
+            }
+            return true;
+          }
+          $(document).ready(function() {
+            $("#registrationForm").submit(function(event) {
+              event.preventDefault();
+              if (validate()) {
+                $("#registrationForm")[0].submit();
+              } else {
+                alert("Please fill in all the fields and correct the errors.");
+              }
+            });
+          });
+        </script>
+      </div>
+    </div>
+  </body>
+</html>
